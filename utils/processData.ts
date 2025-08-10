@@ -1,6 +1,6 @@
 import type { Question, FilterState } from '~/types'
 
-export function processChartData(question: Question, filters: FilterState) {
+export function processData(question: Question, filters: FilterState) {
   // Filter data
   const filtered = question.data.filter(entry =>
     (!filters.companySize.length || filters.companySize.includes(entry.companySize)) &&
