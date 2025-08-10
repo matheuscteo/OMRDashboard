@@ -7,6 +7,12 @@ export interface DataEntry {
   numResponses: number;  // How many times this was mentioned
 }
 
+export interface FilterState {
+  companySize: DataEntry['companySize'][];
+  industry: DataEntry['industry'][];
+  quarter: DataEntry['quarter'][];
+}
+
 // Question structure  
 export interface Question {
   questionId: 'q1' | 'q2' | 'q3';
