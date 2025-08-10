@@ -52,14 +52,36 @@ const handleUpdateFilters = (
 </script>
 
 <template>
-  <div>
-    <FilterOptions
-      :filters="filters.industry"
-      @update-filters="handleUpdateFilters($event, 'industry')"
-    />
-    <div v-if="loading">Loading...</div>
-    <div v-else-if="error">Error loading data.</div>
-    <BarChart v-else-if="data" :data="data" />
-    <div v-else>No data available.</div>
+  <div class="flex w-full max-w-6xl mx-auto justify-around items-start gap-8">
+    <aside class="min-w-[200px] flex flex-col">
+      <h3 class="text-lg font-semibold text-indigo-700 p-2">Filter Options</h3>
+      <FilterOptions
+        :filters="filters.industry"
+        :category="'industry'"
+        :title="'Industry'"
+        @update-filters="handleUpdateFilters($event, 'industry')"
+      />
+
+      <FilterOptions
+        :filters="filters.companySize"
+        :category="'companySize'"
+        :title="'Company Size'"
+        @update-filters="handleUpdateFilters($event, 'companySize')"
+      />
+
+      <FilterOptions
+        :filters="filters.quarter"
+        :category="'quarter'"
+        :title="'Quarter'"
+        @update-filters="handleUpdateFilters($event, 'quarter')"
+      />
+    </aside>
+
+    <section class="max-w-full min-w-[600px]">
+      <div v-if="loading">Loading...</div>
+      <div v-else-if="error">Error loading data.</div>
+      <BarChart v-else-if="data" :data="data" />
+      <div v-else>No data available.</div>
+    </section>
   </div>
 </template>

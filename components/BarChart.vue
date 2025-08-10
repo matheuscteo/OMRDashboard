@@ -70,7 +70,7 @@ const chartOptions = {
 
 <template>
   <div
-    class="w-full max-w-2xl mx-auto bg-white rounded-xl shadow p-6 flex flex-col justify-center"
+    class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md w-full max-w-2xl"
   >
     <h2 class="text-xl font-semibold text-gray-800 mb-2">
       {{ props.data.title }}
