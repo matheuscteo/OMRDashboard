@@ -25,19 +25,21 @@ const props = defineProps<{
 
 const barColor = "rgba(59, 130, 246, 0.85)";
 
-const chartData = {
-  labels: props.data.labels,
-  datasets: [
-    {
-      label: "Mentions",
-      data: props.data.values,
-      backgroundColor: barColor,
-      borderRadius: 8,
-      barThickness: 24,
-      borderSkipped: false,
-    },
-  ],
-};
+const chartData = computed(() => {
+  return {
+    labels: props.data.labels,
+    datasets: [
+      {
+        label: "Mentions",
+        data: props.data.values,
+        backgroundColor: barColor,
+        borderRadius: 8,
+        barThickness: 24,
+        borderSkipped: false,
+      },
+    ],
+  };
+});
 
 const chartOptions = {
   indexAxis: "y",

@@ -8,9 +8,9 @@ export interface DataEntry {
 }
 
 export interface FilterState {
-  companySize: DataEntry['companySize'][];
-  industry: DataEntry['industry'][];
-  quarter: DataEntry['quarter'][];
+  companySize: string[];
+  industry: string[];
+  quarter: string[];
 }
 
 // Question structure  
@@ -36,3 +36,5 @@ export interface HubSpotData {
   };
   questions: Question[];
 }
+
+export type FilterCategory = keyof FilterState;
