@@ -29,7 +29,6 @@ const data = computed(() => {
   ) {
     return null;
   }
-  console.log("reprocessing", processedData);
 
   return processedData;
 });
@@ -38,14 +37,11 @@ const handleUpdateFilters = (
   updateFilter: string,
   filterCategory: keyof FilterState
 ) => {
-  console.log(`Updating filter for ${filterCategory}: ${updateFilter}`);
   if (filters[filterCategory].includes(updateFilter)) {
-    console.log(`Removing filter: ${updateFilter}`);
     filters[filterCategory] = filters[filterCategory].filter(
       (item) => item !== updateFilter
     );
   } else {
-    console.log(`Adding filter: ${updateFilter}`);
     filters[filterCategory].push(updateFilter);
   }
 };
