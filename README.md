@@ -9,7 +9,7 @@ The app has two pages:
 The MVP focuses on:
 - **Dataset**: Question 1 (~100 data points)
 - **Filter**: Industry
-- **Data source**: Static JSON import (with optional future `useFetch` support)
+- **Data source**: Static JSON import
 
 ---
 
@@ -51,3 +51,4 @@ npm install
 npm run dev
 ```
 The app will be available at http://localhost:3000 (or as shown in terminal).
+
